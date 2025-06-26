@@ -14,9 +14,6 @@ The training and test data are modified subsets of the Twitter US Airline Sentim
 - `airline_sentiment`: Sentiment label (negative, neutral, or positive)
 - `airline`: Airline referenced in the tweet (not used in the model)
 
-Data is provided in Parquet format:
-- `tweets-train.parquet`
-- `tweets-test.parquet`
 
 The data was loaded and prepared using Pandas. Only the tweet text was used to train models.
 
@@ -47,10 +44,9 @@ Model performance was tracked separately for each sentiment class to assess how 
 
 ## Implementation Notes
 
-- Preprocessing and modeling were implemented using a `Pipeline` object
+- Preprocessing and modeling were implemented using a pipeline
 - Text feature extraction used a maximum of 100 most common words
 - The model includes `fit`, `predict`, and `predict_proba` methods as required
-- The model is compatible with scikit-learn ≥1.6.1 and serialized using `joblib` ≤5MB
 - Cross-validation was used to avoid overfitting and select hyperparameters
 
 
